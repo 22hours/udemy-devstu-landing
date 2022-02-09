@@ -1,0 +1,37 @@
+.mentor_step {
+    text-align: center;
+}
+
+.mentor_step .step_title {
+    font-size: 20px;
+    color: black;
+}
+.white-text .main-title-top {
+    margin-bottom: 12px;
+}
+
+.white-text .main-title-top span {
+    font-size: 40px;
+}
+
+.white-text .main-title-bottom {
+    margin-bottom: 30px;
+}
+
+.btn_wrapper {
+    width: 100%;
+}
+
+.btn_wrapper .main-btn {
+    width: 100%;
+    cursor: pointer;
+}
+
+.devstu_wrapper {
+    margin-bottom: 40px;
+    height: 250px;
+}
+.devstu_wrapper_2 {
+    margin-bottom: 40px;
+    height: 300px;
+}
