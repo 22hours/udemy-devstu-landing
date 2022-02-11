@@ -42,20 +42,14 @@ Table OF Contents
 \*------------------------------------*/
 
 /* -- typography -- */
-@font-face {
-    font-family: "S-CoreDream-6Bold";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+    font-family: "Noto Sans KR", sans-serif;
 }
-@font-face {
-    font-family: "S-CoreDream-5Medium";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
+
 body {
-    font-family: "S-CoreDream-5Medium";
+    font-family: "Noto Sans KR", sans-serif;
     font-size: 16px;
     line-height: 1.6;
     overflow-x: hidden;
@@ -68,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "S-CoreDream-5Medium";
+    font-family: "Noto Sans KR", sans-serif;
     font-weight: 700;
     margin-top: 0px;
     margin-bottom: 20px;
@@ -141,6 +135,15 @@ ol {
     position: relative;
 }
 
+.custom-padding {
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+.custom2-padding {
+    padding-top: 40px;
+    padding-bottom: 120px;
+}
+
 .md-padding {
     padding-top: 120px;
     padding-bottom: 120px;
@@ -194,7 +197,11 @@ ol {
 
 .section-header {
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+}
+
+.section-sub-header {
+    margin-bottom: 30px;
 }
 
 .section-header .title {
@@ -223,15 +230,17 @@ input[type="number"],
 input[type="date"],
 input[type="url"],
 input[type="tel"],
+select,
 textarea {
     height: 40px;
     width: 100%;
     border: none;
-    background: #f4f4f4;
+    /* background: #f4f4f4; */
+    background-color: white;
     border-bottom: 2px solid #eee;
     color: #354052;
     padding: 0px 10px;
-    opacity: 0.5;
+    /* opacity: 0.5; */
     -webkit-transition: 0.2s border-color, 0.2s opacity;
     transition: 0.2s border-color, 0.2s opacity;
 }
@@ -402,7 +411,7 @@ textarea:focus {
         position: relative;
     }
     .has-dropdown > a:before {
-        font-family: "S-CoreDream-5Medium";
+        font-family: "Noto Sans KR", sans-serif;
         content: "\f054";
         font-size: 6px;
         margin-left: 6px;
@@ -514,7 +523,7 @@ textarea:focus {
     }
     .has-dropdown > a:after {
         content: "\f054";
-        font-family: "S-CoreDream-5Medium";
+        font-family: "Noto Sans KR", sans-serif;
         float: right;
         -webkit-transition: 0.2s -webkit-transform;
         transition: 0.2s -webkit-transform;
@@ -663,7 +672,14 @@ header {
 /*------------------------------------*\
 	About
 \*------------------------------------*/
-
+.sub-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.sub-title2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
 .about {
     position: relative;
     text-align: center;
@@ -1478,6 +1494,10 @@ header {
     margin-left: 15px;
 }
 
+.contact-form .privacy {
+    margin-bottom: 20px;
+}
+
 /*------------------------------------*\
 	Footer
 \*------------------------------------*/
@@ -1522,6 +1542,15 @@ header {
     font-size: 14px;
     text-transform: uppercase;
     margin: 0;
+}
+
+.bridge-2 {
+    text-align: center;
+}
+.bridge-2 .white-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 /*------------------------------------*\

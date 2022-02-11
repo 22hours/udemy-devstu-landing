@@ -1,32 +1,41 @@
-var inputs = $('input[type="text"]');
-var googleSubmitBtn = $("#submit_btn");
-// INPUTS
-var inputName = $("#name");
-var inputPhone = $("#phone");
-var inputEmail = $("#email");
+let submitBtn = document.getElementById("submit_btn");
 
-var inputReason = $("#reason");
-
-function isLoading(status) {
-    if (status) {
-        $("html, body").addClass("wait");
-        googleSubmitBtn.attr("disabled", true).html("전송중...");
-    } else {
-        $("html, body").removeClass("wait");
-        googleSubmitBtn.attr("disabled", false).html("입력완료");
-    }
-}
+let inputName = document.getElementById("name");
+let inputPhone = document.getElementById("phone");
+let inputEmail = document.getElementById("email");
+let inputSelect = document.getElementById("type");
+let inputReason = document.getElementById("reason");
 
 function checkInput() {
     console.log("인풋");
     var isEmpty = false;
-    $.each(inputs, function (index, element) {
-        if (element.value === "") {
-            alert("모든 항목을 입력해주세요");
-            isEmpty = true;
-            return false;
-        }
-    });
+
+    if (inputName.value === "") {
+        alert("모든 항목을 입력해주세요");
+        isEmpty = true;
+        return false;
+    }
+    if (inputPhone.value === "") {
+        alert("모든 항목을 입력해주세요");
+        isEmpty = true;
+        return false;
+    }
+    if (inputEmail.value === "") {
+        alert("모든 항목을 입력해주세요");
+        isEmpty = true;
+        return false;
+    }
+    if (inputSelect.value === "") {
+        alert("모든 항목을 입력해주세요");
+        isEmpty = true;
+        return false;
+    }
+    if (inputReason.value === "") {
+        alert("모든 항목을 입력해주세요");
+        isEmpty = true;
+        return false;
+    }
+
     console.log(isEmpty);
     return isEmpty;
 }
@@ -37,8 +46,6 @@ $("#submit_btn").click(function () {
     if (checkInput()) {
         return;
     }
-    // 입력중..
-    isLoading(true);
 
     $.ajax({
         type: "GET",
