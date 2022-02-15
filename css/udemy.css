@@ -3,8 +3,8 @@
     justify-content: center;
 }
 .video-wrapper {
-    width: 500px;
-    height: 300px;
+    width: 550px;
+    height: 350px;
 }
 .home_img_wrapper {
     width: 100%;
@@ -142,6 +142,11 @@
         padding-bottom: 120px;
     }
 }
+.footer-copyright span {
+    color: rgb(168, 52, 248);
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 480px) {
     .main_wrapper {
         padding-left: 5%;
