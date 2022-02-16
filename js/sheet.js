@@ -71,6 +71,8 @@ const handleClick = () => {
             if (xhr.status === 200 || xhr.status === 201) {
                 // 응답 코드가 200 혹은 201
                 console.log(xhr.responseText);
+                alert("멘토단 지원이 완료되었습니다");
+
                 inputName.value = "";
                 inputPhone.value = "";
                 inputEmail.value = "";
@@ -84,7 +86,9 @@ const handleClick = () => {
     xhr.open(
         "GET",
         "https://script.google.com/macros/s/AKfycbzMN9WQ0QbVp80GLIAtXpYPQu59qksA9Gvb82qZVrMeB6ZEnMF3IbKd0GWkH8nL3C54/exec" +
-            `?이름=${inputName.value}&연락처="${inputPhone.value}&이메일=${inputEmail.value}&희망분야=${inputSelect.value}&지원동기=${inputReason.value}`
+            `?이름=${inputName.value}&연락처=${"'" + inputPhone.value}&이메일=${inputEmail.value}&희망분야=${
+                inputSelect.value
+            }&지원동기=${inputReason.value}`
     );
     xhr.send(); // 요청 전송
 };
