@@ -53,7 +53,8 @@ body {
     font-size: 16px;
     line-height: 1.6;
     overflow-x: hidden;
-    color: #868f9b;
+    /* color: #868f9b; */
+    color: black;
 }
 
 h1,
@@ -719,7 +720,9 @@ header {
 .about:hover h3 {
     color: #fff;
 }
-
+.about:hover p {
+    color: #fff;
+}
 /*------------------------------------*\
 	Portfolio
 \*------------------------------------*/
@@ -879,7 +882,9 @@ header {
 .service:hover h3 {
     color: #fff;
 }
-
+.service:hover p {
+    color: #fff;
+}
 /*------------------------------------*\
 	Why choose us
 \*------------------------------------*/
@@ -895,7 +900,10 @@ header {
     border: 1px solid rgb(168, 52, 248);
     margin-right: 5px;
 }
-
+.feature2 {
+    margin: 10px 25px;
+    font-size: 15px;
+}
 /*------------------------------------*\
 	Numbers
 \*------------------------------------*/
@@ -1495,6 +1503,9 @@ header {
 }
 
 .contact-form .privacy {
+    margin-bottom: 10px;
+}
+.contact-form .marketing {
     margin-bottom: 20px;
 }
 
@@ -1541,13 +1552,14 @@ header {
     text-align: left;
     font-size: 12px;
     margin-bottom: 5px;
+    color: white;
 }
 
 .bridge-2 {
     text-align: center;
 }
 .bridge-2 .white-text {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
 }

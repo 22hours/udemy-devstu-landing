@@ -8,10 +8,21 @@ let inputEmail = document.getElementById("email");
 let inputSelect = document.getElementById("type");
 let inputReason = document.getElementById("reason");
 
+//CHECKBOX
+let checkPrivacy = document.getElementById("check_privacy");
+let checkMarketing = document.getElementById("check_marketing");
+
 //REGEX
 const regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
 const regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 const regSpecialInput = /[\{\}\[\]\/<>$;:\\\\(\'\"]/gi;
+
+const checkPrivacyBox = () => {
+    if (!checkPrivacy.checked) {
+        alert("개인정보처리방침에 동의해주세요");
+        return true;
+    }
+};
 
 const checkEmptyInput = () => {
     let isEmpty = false;
@@ -54,6 +65,10 @@ const checkSpecialInput = () => {
 };
 
 const handleClick = () => {
+    if (checkPrivacyBox()) {
+        return;
+    }
+
     if (checkEmptyInput()) {
         return;
     }
@@ -72,7 +87,6 @@ const handleClick = () => {
                 // 응답 코드가 200 혹은 201
                 console.log(xhr.responseText);
                 alert("멘토단 지원이 완료되었습니다");
-
                 inputName.value = "";
                 inputPhone.value = "";
                 inputEmail.value = "";
@@ -86,9 +100,9 @@ const handleClick = () => {
     xhr.open(
         "GET",
         "https://script.google.com/macros/s/AKfycbzMN9WQ0QbVp80GLIAtXpYPQu59qksA9Gvb82qZVrMeB6ZEnMF3IbKd0GWkH8nL3C54/exec" +
-            `?이름=${inputName.value}&연락처=${"'" + inputPhone.value}&이메일=${inputEmail.value}&희망분야=${
-                inputSelect.value
-            }&지원동기=${inputReason.value}`
+            `?마케팅동의=${checkMarketing.checked ? "O" : "X"}&이름=${inputName.value}&연락처=${
+                "'" + inputPhone.value
+            }&이메일=${inputEmail.value}&희망분야=${inputSelect.value}&지원동기=${inputReason.value}`
     );
     xhr.send(); // 요청 전송
 };
