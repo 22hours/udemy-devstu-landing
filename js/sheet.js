@@ -78,21 +78,23 @@ const handleClick = () => {
     }
 
     const xhr = new XMLHttpRequest();
-
+    submitBtn.innerHTML = "전송중입니다...";
     xhr.onreadystatechange = () => {
         // 요청에 대한 콜백함수
         if (xhr.readyState === xhr.DONE) {
             // 요청이 완료되면 실행
+            submitBtn.innerHTML = "멘토단 지원 완료";
             if (xhr.status === 200 || xhr.status === 201) {
                 // 응답 코드가 200 혹은 201
-                console.log(xhr.responseText);
                 alert("멘토단 지원이 완료되었습니다");
+                console.log(xhr.responseText);
                 inputName.value = "";
                 inputPhone.value = "";
                 inputEmail.value = "";
                 inputSelect.value = "";
                 inputReason.value = "";
             } else {
+                alert("오류로 인해 지원이 되지 않았습니다.\n다시시도해주세요");
                 console.log(xhr.responseText);
             }
         }
