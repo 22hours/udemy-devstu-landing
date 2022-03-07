@@ -81,6 +81,14 @@
     color: white;
     font-weight: bold;
 }
+.guide-btn-wrapper {
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+}
+.guide-btn-wrapper button {
+}
+
 .pc-only {
     display: flex;
 }
