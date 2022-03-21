@@ -65,46 +65,5 @@ const checkSpecialInput = () => {
 };
 
 const handleClick = () => {
-    if (checkPrivacyBox()) {
-        return;
-    }
-
-    if (checkEmptyInput()) {
-        return;
-    }
-
-    if (checkSpecialInput()) {
-        return;
-    }
-
-    const xhr = new XMLHttpRequest();
-    submitBtn.innerHTML = "전송중입니다...";
-    xhr.onreadystatechange = () => {
-        // 요청에 대한 콜백함수
-        if (xhr.readyState === xhr.DONE) {
-            // 요청이 완료되면 실행
-            submitBtn.innerHTML = "멘토단 지원 완료";
-            if (xhr.status === 200 || xhr.status === 201) {
-                // 응답 코드가 200 혹은 201
-                alert("멘토단 지원이 완료되었습니다");
-                console.log(xhr.responseText);
-                inputName.value = "";
-                inputPhone.value = "";
-                inputEmail.value = "";
-                inputSelect.value = "";
-                inputReason.value = "";
-            } else {
-                alert("오류로 인해 지원이 되지 않았습니다.\n다시시도해주세요");
-                console.log(xhr.responseText);
-            }
-        }
-    };
-    xhr.open(
-        "GET",
-        "https://script.google.com/macros/s/AKfycbzMN9WQ0QbVp80GLIAtXpYPQu59qksA9Gvb82qZVrMeB6ZEnMF3IbKd0GWkH8nL3C54/exec" +
-            `?마케팅동의=${checkMarketing.checked ? "O" : "X"}&이름=${inputName.value}&연락처=${
-                "'" + inputPhone.value
-            }&이메일=${inputEmail.value}&희망분야=${inputSelect.value}&지원동기=${inputReason.value}`
-    );
-    xhr.send(); // 요청 전송
+    alert("멘토단 지원이 마감되었습니다");
 };
